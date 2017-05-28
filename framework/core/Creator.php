@@ -1,5 +1,8 @@
 <?php
 
+//创建者
+namespace framework;
+
 abstract class Creator
 {
     //抽象函数不可以实现

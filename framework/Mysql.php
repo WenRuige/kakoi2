@@ -1,15 +1,16 @@
 <?php
-
 /**
  * Created by PhpStorm.
  * User: gewenrui
  * Date: 2017/5/28
- * Time: 上午9:44
+ * Time: 上午11:18
  */
-//工厂类
-namespace framework;
-interface IFactory
-{
-    public function getProperties();
 
+namespace framework;
+class Mysql
+{
+    public function __construct()
+    {
+        //
+    }
 }
