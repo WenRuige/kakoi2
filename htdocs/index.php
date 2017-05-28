@@ -16,11 +16,22 @@ $app->addMethod('Mysql', function () {
     return $this->addConfigToMysql();
 });
 
-
 $app->addMethod('Redis', function () {
 
 });
 $app->run();
+
+
+
+/////////////销毁原生post_get_request///////////////
+
+
+
+
+///////////加载插架//////////////////////
+
+
+/////////////开始处理路由/////////////
 
 
 

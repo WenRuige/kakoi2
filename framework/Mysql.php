@@ -9,6 +9,7 @@
 namespace framework;
 
 use framework\core\IFactory;
+use FluentPDO;
 
 class Mysql implements IFactory
 {
@@ -18,8 +19,22 @@ class Mysql implements IFactory
 
     }
 
-    public function __construct()
+    public function __construct($config)
     {
-        echo 'this is mysql';
+
+        try {
+            $dsn = "{$config['type']}:dbname={$config['dbname']};host={$config['host']};port={$config['port']}";
+            $pdo = new \PDO($dsn, "{$config['user']}", "{$config['pwd']}");
+            $fpdo = new FluentPDO($pdo);
+
+        } catch (\PDOException $exception) {
+
+            echo $exception->getCode();
+
+        } catch (\Exception $exception) {
+
+        }
+
+
     }
 }
