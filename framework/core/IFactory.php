@@ -8,6 +8,7 @@
  */
 //工厂类
 namespace framework\core;
+
 interface IFactory
 {
     public function getProperties();

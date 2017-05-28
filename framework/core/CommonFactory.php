@@ -11,6 +11,7 @@ class CommonFactory extends Creator
     public function FactoryMethod(IFactory $factory)
     {
 
+        $this->common = $factory;
         return $this->common->getProperties();
     }
 }

@@ -1,7 +1,7 @@
 <?php
 
 namespace framework\core;
-
+use framework;
 class Application
 {
 
@@ -31,9 +31,8 @@ class Application
     //向Mysql内添加配置文件
     public function addConfigToMysql()
     {
-
-        echo '123';
-        //$this->factory->doFactory(new Mysql());
+        $config = Config::getConfig('default', 'mysql');
+        $this->factory->doFactory(new \framework\Mysql($config));
     }
 
 

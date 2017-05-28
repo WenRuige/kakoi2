@@ -7,6 +7,9 @@
  */
 
 namespace framework;
+
+use framework\core\IFactory;
+
 class Mysql implements IFactory
 {
 

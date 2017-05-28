@@ -1,4 +1,9 @@
 <?php
 
 
-return ["Mysql" => ['host']];
+return [
+    "default" => [
+    "mysql" => [
+        "hosts" => '123']
+    ]
+];
