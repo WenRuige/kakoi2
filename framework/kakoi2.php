@@ -1,11 +1,10 @@
 <?php
 
-
+//动态追加方法到容器中
 trait kakoi2
 {
     private $methods = array();
 
-    //添加一个方法,(1)方法名称,(2)是否可回调
     public function addMethod($methodName, $methodCallable)
     {
         if (!is_callable($methodCallable)) {
@@ -22,12 +21,5 @@ trait kakoi2
         }
 
     }
-}
-
-//容器类别
-trait container
-{
-
-
 }
 

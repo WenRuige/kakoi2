@@ -1,8 +1,10 @@
 <?php
 
 //容器类
-class container{
+class container
+{
 
+    use objectContainer;
 }
 
 

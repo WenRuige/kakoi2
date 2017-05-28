@@ -4,7 +4,11 @@ namespace framework;
 
 class application
 {
-
-    private $test = 'test';
     use \kakoi2;
+
+
+    public function run()
+    {
+        echo 'run this game';
+    }
 }

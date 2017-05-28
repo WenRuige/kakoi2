@@ -9,9 +9,12 @@ $app = require_once dirname(__DIR__) . "/bootstrap/bootstrap.php";
 
 
 
-$app->addMethod('when', function () {
+$app->addMethod('Mysql', function () {
     return $this->test;
 });
+
+
+$app->run();
 
 
 
