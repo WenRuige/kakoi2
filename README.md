@@ -1,1 +1,2 @@
-# kakoi2
+#### Kakoi2 PHP FRAMEWORK
+##### FASTER STABLE & LIGHTER
