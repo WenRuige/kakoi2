@@ -1,6 +1,6 @@
 <?php
 
-
+error_reporting(E_ERROR);
 define("APP_PATH", dirname(__DIR__));
 //引入composer加载类
 require_once APP_PATH . "/vendor/autoload.php";
@@ -21,6 +21,9 @@ $app->addMethod('Redis', function () {
 
 });
 $app->run();
+
+
+
 
 
 

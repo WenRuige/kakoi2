@@ -11,7 +11,6 @@ spl_autoload_register(function ($class) {
     list($pathOne, $pathTwo,$pathThree) = explode("\\", $class);
 
     $filePath = APP_PATH . "/{$pathOne}/{$pathTwo}/{$pathThree}.php";
-
     if (file_exists($filePath)) {
         include $filePath;
     }
