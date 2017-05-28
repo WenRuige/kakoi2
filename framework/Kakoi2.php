@@ -1,5 +1,6 @@
 <?php
 
+
 //动态追加方法到容器中
 trait kakoi2
 {
@@ -22,4 +23,7 @@ trait kakoi2
 
     }
 }
+
+
+
 

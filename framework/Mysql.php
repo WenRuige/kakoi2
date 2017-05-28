@@ -7,10 +7,16 @@
  */
 
 namespace framework;
-class Mysql
+class Mysql implements IFactory
 {
+
+    public function getProperties()
+    {
+
+    }
+
     public function __construct()
     {
-        //
+        echo 'this is mysql';
     }
 }

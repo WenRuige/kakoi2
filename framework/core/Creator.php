@@ -1,7 +1,7 @@
 <?php
 
 //创建者
-namespace framework;
+namespace framework\core;
 
 abstract class Creator
 {
