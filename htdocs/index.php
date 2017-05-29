@@ -41,7 +41,7 @@ $app->run();
 
 
 \framework\core\Route::init();
-$uri = $_SERVER['REQUEST_URI'];
+
 
 
 

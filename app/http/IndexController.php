@@ -14,4 +14,7 @@ class IndexController
 
         echo '123';
     }
+    public function index(){
+        echo '123';
+    }
 }

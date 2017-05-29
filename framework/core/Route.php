@@ -7,7 +7,7 @@
  */
 
 namespace framework\core;
-use app\http\IndexController;
+
 
 class Route
 {
@@ -22,9 +22,7 @@ class Route
 
 
         self::$requestMethod = $method;
-
-        //当前Uri预处理
-
+        //当前Uri预处理   假设当前没有传参数过来,easy way
         $uri = explode('/', $uri)[1];
         $urlArray = require_once APP_PATH . "/framework/route/web.php";
         self::pregUrl($uri, $urlArray);
@@ -39,7 +37,9 @@ class Route
         if (is_array($urlArray) && !empty($urlArray)) {
             foreach ($urlArray as $key => $value) {
                 if ($value[1] == $uri) {
-                    return self::newFunction($value);
+                    //如果匹配到则退出
+                    self::newFunction($value);
+                    exit();
                 }
 
             }
@@ -48,9 +48,6 @@ class Route
         } else {
             throw new \ErrorException("EMPTY ROUTE");
         }
-
-
-        //var_dump($urlArray);
     }
 
     public static function newFunction($value)
@@ -63,17 +60,22 @@ class Route
             throw new \ErrorException('Request ERROR');
         }
         //调用spl加载规则
-        self::loadingRoute();
+        self::loadingRoute($Controller, $function);
 
     }
 
-    public static function loadingRoute()
+    public static function loadingRoute($Controller, $function)
     {
 
-        include APP_PATH."app/http/IndexController.php";
 
-        $data = new IndexController();
+        $filePath = APP_PATH . "app/http/{$Controller}.php";
+        if (file_exists($filePath)) {
+            include $filePath;
+        }
 
+        $str = "\\app\\http\\{$Controller}";
+        $data = new $str();
+        $data->$function();
     }
 
 }

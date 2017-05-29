@@ -32,9 +32,11 @@ class Application
     public function addConfigToMysql()
     {
         $config = Config::getConfig('default', 'mysql');
+        //返回的是mysql的对象,可动态定制
         $mysqlObj = $this->factory->doFactory(new \framework\Mysql($config));
 
-        var_dump($mysqlObj);
+
+
     }
 
 

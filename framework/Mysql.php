@@ -14,8 +14,11 @@ use FluentPDO;
 class Mysql implements IFactory
 {
 
+    private $mysqlObj;
+
     public function getProperties()
     {
+        return $this->mysqlObj;
 
     }
 
@@ -25,8 +28,8 @@ class Mysql implements IFactory
         try {
             $dsn = "{$config['type']}:dbname={$config['dbname']};host={$config['host']};port={$config['port']}";
             $pdo = new \PDO($dsn, "{$config['user']}", "{$config['pwd']}");
-            $fpdo = new FluentPDO($pdo);
-            return $fpdo;
+            $this->mysqlObj = new FluentPDO($pdo);
+
 
         } catch (\PDOException $exception) {
             //catch pdo error
