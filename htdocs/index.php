@@ -1,7 +1,7 @@
 <?php
 //报错等级设置为error
 error_reporting(E_ERROR);
-
+use framework\route;
 define("APP_PATH", dirname(__DIR__));
 //引入composer加载类
 require_once APP_PATH . "/vendor/autoload.php";
@@ -24,7 +24,6 @@ $app->run();
 
 
 
-var_dump($_GET);
 
 
 
@@ -38,6 +37,14 @@ var_dump($_GET);
 
 /////////////开始处理路由/////////////
 
+//获取当前php执行路径
+
+
+\framework\core\Route::test();
+$uri = $_SERVER['REQUEST_URI'];
+
+
+var_dump($uri);
 
 
 
