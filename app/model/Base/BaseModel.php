@@ -6,7 +6,7 @@
  * Time: 下午6:26
  */
 
-namespace app\model;
+namespace app\model\Base;
 
 use framework\core\Db;
 

@@ -7,14 +7,17 @@
  */
 
 namespace app\http;
+
+
+
+use app\model\Index\IndexModel;
+
 class IndexController
 {
-    public function test()
+    public function index()
     {
-
-        echo '123';
-    }
-    public function index(){
-        echo '123';
+       // $index = new IndexModel();
+        $res = IndexModel::test();
+        var_dump($res);
     }
 }

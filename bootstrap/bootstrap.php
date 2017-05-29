@@ -19,9 +19,15 @@ spl_autoload_register(function ($class) {
     if (file_exists($filePath2)) {
         include $filePath2;
     }
+    //引入主程序目录
+    list($pathOne, $pathTwo, $pathThree, $pathFour) = explode("\\", $class);
+    $filePath3 = APP_PATH . "/{$pathOne}/{$pathTwo}/{$pathThree}/{$pathFour}.php";
+
+    if (file_exists($filePath3)) {
+        include $filePath3;
+    }
+
 });
-
-
 
 $app = new \framework\core\Application();
 return $app;
