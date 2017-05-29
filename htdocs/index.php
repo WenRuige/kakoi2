@@ -40,11 +40,11 @@ $app->run();
 //获取当前php执行路径
 
 
-\framework\core\Route::test();
+\framework\core\Route::init();
 $uri = $_SERVER['REQUEST_URI'];
 
 
-var_dump($uri);
+
 
 
 
