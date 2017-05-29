@@ -5,7 +5,7 @@
 require_once dirname(__DIR__) . "/framework/core/Application.php";
 
 
-//加载配置文件
+//匿名函数加载配置文件
 spl_autoload_register(function ($class) {
     //一定要进行路径拆分 \ turn to /
     //check文件是否存在,如果文件存在的话,则引入
@@ -20,8 +20,10 @@ spl_autoload_register(function ($class) {
         include $filePath2;
     }
 });
-$app = new \framework\core\Application();
 
+
+
+$app = new \framework\core\Application();
 return $app;
 
 

@@ -32,7 +32,9 @@ class Application
     public function addConfigToMysql()
     {
         $config = Config::getConfig('default', 'mysql');
-        $this->factory->doFactory(new \framework\Mysql($config));
+        $mysqlObj = $this->factory->doFactory(new \framework\Mysql($config));
+
+        var_dump($mysqlObj);
     }
 
 

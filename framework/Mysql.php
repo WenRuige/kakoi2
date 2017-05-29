@@ -26,10 +26,11 @@ class Mysql implements IFactory
             $dsn = "{$config['type']}:dbname={$config['dbname']};host={$config['host']};port={$config['port']}";
             $pdo = new \PDO($dsn, "{$config['user']}", "{$config['pwd']}");
             $fpdo = new FluentPDO($pdo);
+            return $fpdo;
 
         } catch (\PDOException $exception) {
-
-            echo $exception->getCode();
+            //catch pdo error
+            echo $exception->getCode() . $exception->getMessage();
 
         } catch (\Exception $exception) {
 
