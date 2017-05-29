@@ -1,7 +1,9 @@
 <?php
 
 namespace framework\core;
+
 use framework;
+
 class Application
 {
 
@@ -26,15 +28,16 @@ class Application
             //或者直接使用$this->key();
             //使用拼凑字符串进行调用是错误的.
         }
+
     }
 
     //向Mysql内添加配置文件
     public function addConfigToMysql()
     {
         $config = Config::getConfig('default', 'mysql');
-        //返回的是mysql的对象,可动态定制
-        $mysqlObj = $this->factory->doFactory(new \framework\Mysql($config));
-
+        //将Mysql对象绑定到$this上
+        $db = new Db();
+        return $this->factory->doFactory(new \framework\Mysql($config));
 
 
     }
