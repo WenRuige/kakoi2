@@ -26,7 +26,7 @@ $app->run();
 
 
 
-
+\framework\core\Route::init();
 
 
 
@@ -43,7 +43,7 @@ $app->run();
 //获取当前php执行路径
 
 
-\framework\core\Route::init();
+
 
 
 

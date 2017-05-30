@@ -19,8 +19,6 @@ class Route
         //获取请求的Uri
         $method = $_SERVER['REQUEST_METHOD'];
         $uri = $_SERVER['REQUEST_URI'];
-
-
         self::$requestMethod = $method;
         //当前Uri预处理   假设当前没有传参数过来,easy way
         $uri = explode('/', $uri)[1];
@@ -49,7 +47,7 @@ class Route
             throw new \ErrorException("EMPTY ROUTE");
         }
     }
-
+    //实例化方法
     public static function newFunction($value)
     {
         //check请求
@@ -63,7 +61,7 @@ class Route
         self::loadingRoute($Controller, $function);
 
     }
-
+    //加载路由
     public static function loadingRoute($Controller, $function)
     {
 

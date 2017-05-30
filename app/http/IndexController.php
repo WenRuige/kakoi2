@@ -15,7 +15,7 @@ class IndexController
 {
     public function index()
     {
-       
+
         $res = IndexModel::test();
 
     }
