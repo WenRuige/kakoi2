@@ -7,11 +7,32 @@
  */
 
 namespace framework\core;
-class Db{
+class Db
+{
 
 
-    public function __construct()
+    protected static $mysqlObj;
+
+    public function __construct($Mysql)
     {
-        echo 'db init';
+        self::$mysqlObj = $Mysql;
     }
+
+    protected static $_instance;
+
+    //单利模式
+    public static function getInstance()
+    {
+        if (self::$_instance instanceof self) {
+            return self::$_instance;
+        } else {
+            return self::getObj();
+        }
+    }
+
+    public function getObj()
+    {
+        return self::$mysqlObj;
+    }
+
 }

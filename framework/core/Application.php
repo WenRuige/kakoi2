@@ -36,9 +36,8 @@ class Application
     {
         $config = Config::getConfig('default', 'mysql');
         //将Mysql对象绑定到$this上
-        $db = new Db();
-        return $this->factory->doFactory(new \framework\Mysql($config));
-
+        $mysqlObj =  $this->factory->doFactory(new \framework\Mysql($config));
+        $db = new Db($mysqlObj);
 
     }
 

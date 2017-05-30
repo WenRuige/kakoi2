@@ -15,10 +15,23 @@ abstract class BaseModel extends Db
 
     const TABLE_NAME = '';
 
-    public function getAll()
+    public function init()
+    {
+
+    }
+
+    //获取表明
+    public static function getTableName()
     {
         $temp = get_called_class();
+        var_dump($temp);
         return $temp::TABLE_NAME;
+    }
+
+    public static function getObject()
+    {
+        $table = self::getTableName();
+        return Db::getInstance()->from($table)->fetchAll();
     }
 
 }

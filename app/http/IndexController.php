@@ -9,15 +9,14 @@
 namespace app\http;
 
 
-
 use app\model\Index\IndexModel;
 
 class IndexController
 {
     public function index()
     {
-       // $index = new IndexModel();
+       
         $res = IndexModel::test();
-        var_dump($res);
+
     }
 }
